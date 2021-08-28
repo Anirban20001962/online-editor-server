@@ -1,7 +1,7 @@
-import { LANGUAGES } from "../constants";
+import { LANGUAGES } from '../constants';
 
 export interface RunEventData {
-    ext: string;
-    language: LANGUAGES;
-    content: string;
+	ext: string;
+	language: LANGUAGES;
+	content: string;
 }
