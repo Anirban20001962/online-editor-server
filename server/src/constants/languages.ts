@@ -8,4 +8,13 @@ enum LANGUAGES {
     JAVA = "java",
 }
 
+export enum EXT {
+    PYTHON = ".py",
+    TS = ".ts",
+    JS = ".js",
+    //future features
+    C = ".c",
+    CPP = ".cpp",
+    JAVA = ".java",
+}
 export default LANGUAGES;
