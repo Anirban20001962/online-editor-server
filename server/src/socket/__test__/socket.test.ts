@@ -5,7 +5,6 @@ import { EVENTS, LANGUAGES } from "../../constants";
 import { EXT } from "../../constants/languages";
 import handler from "../handler";
 
-jest.setTimeout(10000);
 describe("Test for the socket", () => {
     let io: Server, clientSocket: Socket;
 
