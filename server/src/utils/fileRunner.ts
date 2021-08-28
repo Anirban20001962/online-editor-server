@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import { spawn } from "child_process";
-=======
 import { exec } from "child_process";
->>>>>>> master
 
 type listener<T = any> = (chunks: T) => void;
 interface options {
@@ -11,14 +7,6 @@ interface options {
     onData: listener;
     onError: listener;
 }
-<<<<<<< HEAD
-export const fileRunner = ({ cmd, args, onData, onError }: options) => {
-    const cp = spawn(cmd, args);
-    cp.stdout.on("data", onData);
-    cp.stderr.on("data", onError);
-
-    return cp;
-=======
 
 export const fileRunner = ({ cmd, args, onData, onError }: options) => {
     exec(`${cmd} ${args.join(" ")}`, (err, stdout, stderr) => {
@@ -32,5 +20,4 @@ export const fileRunner = ({ cmd, args, onData, onError }: options) => {
             return onError(stderr);
         }
     });
->>>>>>> master
 };

@@ -1,9 +1,5 @@
 import { Socket } from "socket.io";
-<<<<<<< HEAD
-// import { spawn } from "node-pty";
-=======
 // import { spawn } from 'node-pty';
->>>>>>> master
 import path from "path";
 import fs from "fs";
 import { LANGUAGES, EVENTS } from "../constants";
@@ -21,30 +17,19 @@ export default function handler(socket: Socket) {
         },
         onError(data: any) {
             if (data instanceof Buffer) {
-<<<<<<< HEAD
-                socket.emit(EVENTS.OUTPUT, data.toString());
-                return;
-            }
-            socket.emit(EVENTS.OUTPUT, data);
-=======
                 console.log(data.toString());
                 socket.emit(EVENTS.OUTPUT, data.toString());
                 return;
             }
             console.log(data.message);
             socket.emit(EVENTS.OUTPUT, data.message);
->>>>>>> master
         },
     };
     //run
     socket.on(EVENTS.RUN, (data: RunEventData) => {
         const { ext, content, language } = data;
 
-<<<<<<< HEAD
-        const filename = `./run/app${ext}`;
-=======
         const filename = `./run/${socket.id}${ext}`;
->>>>>>> master
         const stream = fs.createWriteStream(path.join(process.cwd(), filename));
         stream.write(content);
         stream.end();
