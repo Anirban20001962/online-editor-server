@@ -19,7 +19,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "."
+        source: "./server/*,./package.json,./tsconfig.json,./run,./jsconfig.json,./jest.config.js"
         target: "~/onlineEditor"
         timeout: 5m
         command_timeout: 20m
