@@ -21,6 +21,8 @@ jobs:
         port: ${{ secrets.PORT }}
         source: "."
         target: "~/onlineEditor"
+        timeout: 5m
+        command_timeout: 20m
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
