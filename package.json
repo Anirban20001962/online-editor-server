@@ -4,9 +4,6 @@
     "description": "",
     "main": "/server/dist/index.js",
     "types": "./server/dist/index.d.ts",
-    "engines": {
-        "node": ">=14.17.3"
-    },
     "scripts": {
         "test": "jest",
         "dev": "ts-node-dev server/src/index.ts",
