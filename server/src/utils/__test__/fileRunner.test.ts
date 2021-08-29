@@ -48,7 +48,7 @@ it("should execute and call the onError mock func if its running non file comman
     });
 
     fileRunner({
-        cmd: "ls",
+        cmd: "meowmeow",
         args: [],
         onData,
         onError,
