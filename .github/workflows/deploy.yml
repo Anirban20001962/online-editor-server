@@ -20,8 +20,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         source: ".,!node_modules"
-        target: "~/onlineEditor"
-        timeout: 5m
+        target: "onlineEditor"
+        timeout: 10m
         command_timeout: 20m
 
     - name: Executing remote command
