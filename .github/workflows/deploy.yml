@@ -25,7 +25,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         source: "."
-        target: "/home/ranjan/onlineEditor"
+        target: "~/onlineEditor"
 
     - name: Executing remote command
       uses: appleboy/ssh-action@master
