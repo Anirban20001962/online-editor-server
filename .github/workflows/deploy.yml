@@ -31,4 +31,4 @@ jobs:
         username: ${{ secrets.USERNAME }}
         port: ${{ secrets.PORT }}
         password: ${{ secrets.PASSWORD }}
-        script: cd ~/onlineEditor && yarn install
+        script: cd ~/onlineEditor && nvm use default && npm install
