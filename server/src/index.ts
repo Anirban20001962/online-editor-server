@@ -28,5 +28,5 @@ const io = new Server(server, {
 io.on("connection", handler);
 
 server.listen(port, () => {
-    console.log(`Server started: http://localhost:${port}`);
+    console.log(`Server Started: http://localhost:${port}`);
 });
