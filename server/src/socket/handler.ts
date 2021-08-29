@@ -50,8 +50,8 @@ export default function handler(socket: Socket) {
         if (language === LANGUAGES.TS) {
             fileRunner({
                 ...runOptions,
-                cmd: "ts-node",
-                args: [filename],
+                cmd: "npx",
+                args: ["ts-node", filename],
             });
         }
     });
