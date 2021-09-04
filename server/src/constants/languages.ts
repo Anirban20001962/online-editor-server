@@ -4,7 +4,7 @@ enum LANGUAGES {
     JS = "javascript",
     //future features
     C = "c",
-    CPP = "c++",
+    CPP = "cpp",
     JAVA = "java",
 }
 
