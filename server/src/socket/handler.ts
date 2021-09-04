@@ -54,6 +54,33 @@ export default function handler(socket: Socket) {
                 args: [filename],
             });
         }
+        if (language === LANGUAGES.C) {
+            fileRunner({
+                ...runOptions,
+                cmd: "gcc",
+                args: [
+                    filename,
+                    "-o",
+                    `./run/${socket.id}`,
+                    "&&",
+                    `./run/${socket.id}`,
+                ],
+            });
+        }
+        if (language === LANGUAGES.CPP) {
+            console.log("C++ running");
+            fileRunner({
+                ...runOptions,
+                cmd: "g++",
+                args: [
+                    filename,
+                    "-o",
+                    `./run/${socket.id}`,
+                    "&&",
+                    `./run/${socket.id}`,
+                ],
+            });
+        }
     });
 
     socket.on("disconnect", async () => {
