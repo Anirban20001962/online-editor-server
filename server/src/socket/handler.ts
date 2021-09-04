@@ -29,10 +29,13 @@ export default function handler(socket: Socket) {
     socket.on(EVENTS.RUN, (data: RunEventData) => {
         const { ext, content, language } = data;
 
+        socket.emit(EVENTS.RUNNING, "Running file.....");
+
         const filename = `./run/${socket.id}${ext}`;
         const stream = fs.createWriteStream(path.join(process.cwd(), filename));
         stream.write(content);
         stream.end();
+
         if (language === LANGUAGES.JS) {
             fileRunner({
                 ...runOptions,
@@ -59,25 +62,24 @@ export default function handler(socket: Socket) {
                 ...runOptions,
                 cmd: "gcc",
                 args: [
-                    filename,
                     "-o",
                     `./run/${socket.id}`,
+                    filename,
                     "&&",
-                    `./run/${socket.id}`,
+                    `${process.cwd()}/run/${socket.id}`,
                 ],
             });
         }
         if (language === LANGUAGES.CPP) {
-            console.log("C++ running");
             fileRunner({
                 ...runOptions,
                 cmd: "g++",
                 args: [
-                    filename,
                     "-o",
                     `./run/${socket.id}`,
+                    filename,
                     "&&",
-                    `./run/${socket.id}`,
+                    `${process.cwd()}/run/${socket.id}`,
                 ],
             });
         }
