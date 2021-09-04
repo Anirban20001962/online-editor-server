@@ -34,5 +34,6 @@ jobs:
         script: |
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
-          cd ~/onlineEditor && nvm use default && npm install
+          cd ~/onlineEditor && nvm use default && npm install 
+          npm build
           pm2 restart code_editor
