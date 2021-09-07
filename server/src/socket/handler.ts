@@ -94,6 +94,8 @@ export default function handler(socket: Socket) {
                 return regex.test(file);
             })
             .map((file) => fs.promises.unlink(path.join(target, file)));
-        await Promise.all(filesToRemove);
+        try {
+            await Promise.all(filesToRemove);
+        } catch (err) {}
     });
 }
