@@ -1,3 +1,5 @@
+import os from "os";
+
 enum LANGUAGES {
     PYTHON = "python",
     TS = "typescript",
@@ -17,4 +19,13 @@ export enum EXT {
     CPP = ".cpp",
     JAVA = ".java",
 }
+
+export const CMD = {
+    python: os.platform() === "win32" ? "python" : "python3",
+    typescript: "ts-node",
+    javascript: "node",
+    c: "gcc",
+    cpp: "g++",
+    java: "javac",
+};
 export default LANGUAGES;
