@@ -5,6 +5,7 @@ import fs from "fs";
 import { LANGUAGES, EVENTS } from "../constants";
 import { RunEventData } from "../interfaces";
 import { fileRunner } from "../utils/fileRunner";
+import { CMD } from "../constants/languages";
 
 export default function handler(socket: Socket) {
     const runOptions = {
@@ -39,28 +40,28 @@ export default function handler(socket: Socket) {
         if (language === LANGUAGES.JS) {
             fileRunner({
                 ...runOptions,
-                cmd: "node",
+                cmd: CMD[language],
                 args: [filename],
             });
         }
         if (language === LANGUAGES.PYTHON) {
             fileRunner({
                 ...runOptions,
-                cmd: "python",
+                cmd: CMD[language],
                 args: [filename],
             });
         }
         if (language === LANGUAGES.TS) {
             fileRunner({
                 ...runOptions,
-                cmd: "ts-node",
+                cmd: CMD[language],
                 args: [filename],
             });
         }
         if (language === LANGUAGES.C) {
             fileRunner({
                 ...runOptions,
-                cmd: "gcc",
+                cmd: CMD[language],
                 args: [
                     "-o",
                     `./run/${socket.id}`,
@@ -73,7 +74,7 @@ export default function handler(socket: Socket) {
         if (language === LANGUAGES.CPP) {
             fileRunner({
                 ...runOptions,
-                cmd: "g++",
+                cmd: CMD[language],
                 args: [
                     "-o",
                     `./run/${socket.id}`,
