@@ -88,7 +88,7 @@ export default function handler(socket: Socket) {
 			fileRunner({
 				...runOptions,
 				cmd: CMD[language],
-				args: [filename, '&&', `java -cp ${process.cwd()}/run; Main`],
+				args: [filename, '&&', `java -cp ${process.cwd()}/run Main`],
 			});
 		}
 	});
